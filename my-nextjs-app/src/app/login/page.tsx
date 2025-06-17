@@ -5,6 +5,7 @@
 import { useState } from "react";
 
 export default function LoginPage() {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -14,10 +15,10 @@ export default function LoginPage() {
     setError('');
 
     try {
-      const res = await fetch('http://localhost:4000/api/login', {
+      const res = await fetch(`${apiUrl}/users/login`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application.json'
+          'Content-Type': 'application/json'
         },
         credentials: 'include',
         body: JSON.stringify({ email, password})
@@ -31,6 +32,7 @@ export default function LoginPage() {
         setError(data.message);
       }
     } catch (err) {
+      console.log(err);
       setError('Network error');
     }
   }
@@ -52,7 +54,7 @@ export default function LoginPage() {
               autoComplete="email"
               required
               value={email}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
               placeholder="you@example.com"
             />
@@ -69,7 +71,7 @@ export default function LoginPage() {
               autoComplete="current-password"
               required
               value={password}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
               placeholder="••••••••"
             />
