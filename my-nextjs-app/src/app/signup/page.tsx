@@ -5,6 +5,8 @@
 import { useState } from 'react';
 
 export default function SignupPage() {
+  const apiUrl = process.env.NEXT_PUBLIC_API_UR;
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
@@ -20,7 +22,7 @@ export default function SignupPage() {
     }
 
     try {
-      const res = await fetch('http://localhost:4000/api/signup', {
+      const res = await fetch(`${apiUrl}/users/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
