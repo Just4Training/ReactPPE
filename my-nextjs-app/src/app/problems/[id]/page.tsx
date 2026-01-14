@@ -7,8 +7,8 @@ import { Problem } from "@/types/Problem";
 
 export default function ProblemDetailPage() {
   const { id } = useParams();
-  const [mounted, setMounted] = useState(false);
-  const router = useRouter();
+  // const [mounted, setMounted] = useState(false);
+  // const router = useRouter();
   const [problem, setProblem] = useState<Problem | null>(null);
   const [code, setCode] = useState('// Write your solution here');
   const [loading, setLoading] = useState(true);
@@ -53,7 +53,8 @@ export default function ProblemDetailPage() {
       const result = await res.json();
       setOutput(result.output || 'Submission complete.');
     } catch (err) {
-      setOutput('Error submitting code.');
+      const errorMessage = err instanceof Error ? err.message : String(err) || 'Error submitting code.';
+      setOutput(errorMessage);
     }
   };
 
