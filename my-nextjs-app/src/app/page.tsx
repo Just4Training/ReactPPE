@@ -15,7 +15,7 @@ export default function Home() {
             <p className="text-gray-600 mb-4">
               All about algorithms and data structure. Support multi programming languages.
             </p>
-            <a href="/algorithms" className="mt-auto bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            <a href="/problems" className="mt-auto bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
               Learn More
             </a>
           </div>

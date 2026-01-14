@@ -6,13 +6,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 const slides = [
   {
     id: 1,
-    image: 'https://picsum.photos/id/1018/1200/500',
-    caption: 'First slide caption'
+    image: 'https://imgur.com/9WoACGw',
+    caption: 'Algorithm & Problem Solving'
   },
   {
     id: 2,
-    image: 'https://picsum.photos/id/1015/1200/500',
-    caption: 'Second slide caption'
+    image: 'https://imgur.com/Aosqj3q',
+    caption: 'System Design'
   },
   {
     id: 3,

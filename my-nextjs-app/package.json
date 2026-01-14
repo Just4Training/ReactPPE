@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
     "@tailwindcss/cli": "^4.1.10",
     "framer-motion": "^12.19.1",
     "next": "15.2.3",
