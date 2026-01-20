@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Carousel from "./components/Carousel";
 
 export default function Home() {
@@ -21,13 +22,11 @@ export default function Home() {
           </div>
 
           <div className="bg-gray-100 rounded-xl shadow p-6 flex flex-col items-start">
-            <h3 className="text-xl font-semibold mb-2">Feature Two</h3>
+            <h3 className="text-xl font-semibold mb-2">System Design</h3>
             <p className="text-gray-600 mb-4">
-              Another important feature that helps your users get things done.
+              System Design in in modern software architecture.
             </p>
-            <button className="mt-auto bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-              Learn More
-            </button>
+             <Link href="/blogs" className="mt-auto bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</Link>
           </div>
 
           <div className="bg-gray-100 rounded-xl shadow p-6 flex flex-col items-start">
